@@ -1,4 +1,4 @@
-package threading;
+package thread.test;
 
 public class TestThread1 extends Thread{
     @Override

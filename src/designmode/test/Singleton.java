@@ -1,4 +1,4 @@
-package designmode;
+package designmode.test;
 
 public class Singleton {
 

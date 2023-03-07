@@ -1,4 +1,4 @@
-package threading;
+package thread.test;
 
 public class TestThread2 implements Runnable{
 
