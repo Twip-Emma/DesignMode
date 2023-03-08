@@ -1,4 +1,4 @@
-package string.test;
+package javaenum.test;
 
 public enum MonthEnum {
     //1.提供当前枚举类的对象
