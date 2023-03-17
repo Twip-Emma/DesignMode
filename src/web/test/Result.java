@@ -74,10 +74,4 @@ public class Result<T> implements Serializable {
         this.msg = msg;
         this.data = data;
     }
-
-    public static <T> Result<T> success(T data) {
-        return new Result<T>().setData();
-    }
-
-
 }
