@@ -12,7 +12,7 @@ public class CheckImage {
     public static void main(String[] args) {
         File realImage = new File("data/测试-真图片.png");
         File wrongImage = new File("data/测试-文本文件转图片.png");
-
+        File realImage2 = new File("data/测试-真图片转文本.txt");
 
         // 方法1：通过是否可以被ImageIO读取器所匹配来判断是否是图片文件
         try {
