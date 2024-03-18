@@ -1,5 +1,8 @@
 package string.test;
 
+import org.junit.Test;
+
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.util.Date;
@@ -25,5 +28,50 @@ public class DateFormat {
         int i = LocalDate.of(2011, 1, 1).lengthOfYear();
         System.out.println(daysOfThisYear);
         System.out.println(i);
+    }
+
+    @Test
+    public void test1() {
+        String s1 = "2020-02-12 20:55:09";
+        Date date = new Date();
+        try {
+            date = new SimpleDateFormat("yyyy-MM-dd HH:mm").parse(s1);
+        } catch (Exception e) {
+            System.out.println("错误");
+        }
+
+        String resp = new SimpleDateFormat("yyyy-MM-dd HH:mm").format(date);
+        System.out.println(resp);
+    }
+
+    @Test
+    public void test2() {
+        String aStart = "2023-07-01";
+        String aEnd = "2023-07-06";
+        String bStart = "2023-07-05";
+        String bEnd = "2023-07-15";
+
+        boolean hasIntersection = hasIntersection(aStart, aEnd, bStart, bEnd);
+        System.out.println(hasIntersection); // 输出 true
+    }
+
+    public static boolean hasIntersection(String aStart, String aEnd, String bStart, String bEnd) {
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        try {
+            Date startDateA = sdf.parse(aStart);
+            Date endDateA = sdf.parse(aEnd);
+            Date startDateB = sdf.parse(bStart);
+            Date endDateB = sdf.parse(bEnd);
+
+            // 判断两个时间间隔是否有交集
+            if (startDateA.compareTo(endDateB) <= 0 && endDateA.compareTo(startDateB) >= 0) {
+                return true;
+            }
+
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
+        return false;
     }
 }
