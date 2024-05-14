@@ -5,6 +5,7 @@ public class Test3 {
         Son son = new Son();
         Father f = son.fa();
         System.out.println(f.getClass());
+
     }
 
     static class Father {
