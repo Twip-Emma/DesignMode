@@ -7,12 +7,14 @@ public class MapObjectChangeTest {
     public static void main(String[] args) {
         User user1 = new User("1", "张三");
         User user2 = new User("2", "李四");
+        User user3 = new User(null, null);
         Map<String, User> map = new HashMap<>();
         map.put("a", user1);
         map.put("b", user2);
 
         map.get("a").setName("张三个");
         System.out.println(map.get("a"));
+        System.out.println(user3.getId().equals("123"));
     }
 }
 
